@@ -296,6 +296,7 @@
       <DependentUpon>ModelCasino.edmx</DependentUpon>
       <LastGenOutput>ModelCasino.cs</LastGenOutput>
     </Content>
+    <Content Include="DataBase\praktika 2.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
