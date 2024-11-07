@@ -1,0 +1,50 @@
+﻿<Page x:Class="_1_ten.Pages.BlackjackPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ui ="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:local="clr-namespace:_1_ten.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="BlackjackPage">
+
+    <Grid Background="#FF0D6F49">
+        <ui:TitleBar Title="Blackjack"/>
+        <Canvas HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" Height="385">
+        </Canvas>
+
+        <Rectangle Height="450" VerticalAlignment="Center" Fill="#FF0D6F49" Cursor="IBeam"></Rectangle>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Orientation="Vertical" Height="101">
+            <TextBlock Foreground="Yellow" x:Name="MessageTbx" FontSize="20" Margin="10" FontFamily="Sitka Heading"></TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,-20,0,0">
+                <TextBlock FontSize="28" FontFamily="Sitka Heading" Margin="10">Ставка:</TextBlock>
+                <TextBox FontSize="20" x:Name="BetTbx" FontFamily="Arial" Width="250" Height="40"></TextBox>
+                <ui:Button Click="PlayButt_Click" x:Name="PlayButt" Width="120" Height="60" Margin="20,0,0,0">
+                    <TextBlock FontSize="28" FontFamily="Sitka Heading"><Run Text="Играть"/></TextBlock>
+                </ui:Button>
+                <Button Name="ExitButt" Width="120" Height="60" Margin="20,0,0,0" Click="ExitButt_Click">
+                    <TextBlock FontSize="28" FontFamily="Sitka Heading"><Run Text="Выйти"/></TextBlock>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <Canvas x:Name="PlayerHandCnv" Width="850" Height="350" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+
+        </Canvas>
+        <Canvas x:Name="DealerHandCnv" Width="400" HorizontalAlignment="Left" Margin="0,336,0,0"/>
+
+
+        <StackPanel Margin="0 0 0 180" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="MoreButt" Width="120" Height="60" Margin="10 0" Click="MoreButt_Click">
+                <TextBlock FontSize="28" FontFamily="Sitka Heading">Ещё</TextBlock>
+            </Button>
+            <Button x:Name="StopButt" Width="120" Height="60" Margin="10 0" Click="StopButt_Click">
+                <TextBlock FontSize="28" FontFamily="Sitka Heading">Стоп</TextBlock>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,43 @@
+﻿<Page x:Class="_1_ten.Pages.AuthorizationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:local="clr-namespace:_1_ten.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
+      Title="AuthorizationPage">
+    <Grid Background="#FF333131">
+        <StackPanel Margin="810,355,823,649">
+            <TextBlock Width="178" Text="1-Ten" FontSize="64" Height="79" FontStretch="Medium" FontWeight="Regular" HorizontalAlignment="Center" FontFamily="Stencil">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF8EA258" Offset="0.009"/>
+                        <GradientStop Color="#FFAD8766" Offset="0.978"/>
+                        <GradientStop Color="#FFAB8865" Offset="0.701"/>
+                        <GradientStop Color="#FF424633" Offset="0.402"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <!--<ui:SymbolIcon Symbol="Money24" Foreground="Green" FontSize="150"/>
+            <ui:SymbolIcon Symbol="ArrowTrendingLines20" Foreground="Red" FontSize="150"/>-->
+        </StackPanel>
+        <ui:TitleBar Title="1Ten the best casino" />
+        <StackPanel Width="300" Margin="810,449,810,288">
+            <Label Content="Введите логин:" HorizontalAlignment="Center" Margin="0,0,0,0" Width="95"/>
+
+            <ui:TextBox Name="LoginTextBox" Margin="0,0,0,15" Background="White" FontSize="16" FontFamily="Times New Roman" FontWeight="Bold" Height="34"/>
+            <Label Content="Введите пароль:" HorizontalAlignment="Center" Margin="0,-5,0,0" VerticalAlignment="Top"/>
+            <ui:PasswordBox Name="PassBox" Background="White" Height="34" Margin="0,0,0,15" FontSize="16"/>
+            <ui:Button Content="Войти" Background="Red" HorizontalAlignment="Center" Width="150" Click="Button_Click"/>
+
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <ui:TextBlock Text="У вас нет аккаунта?" Width="108" Margin="20,0,20,0" Foreground="White"/>
+                <ui:TextBlock Text="Пройдите регистрацию" Cursor="Hand" MouseDown="TextBlock_MouseDown" Width="132" Foreground="#FF3C36FF"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

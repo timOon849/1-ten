@@ -1,0 +1,22 @@
+﻿<Window x:Class="_1_ten.Pages.GameHistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ui ="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_1_ten.Pages"
+        mc:Ignorable="d"
+        Title="GameHistoryWindow" Height="450" Width="800" WindowStyle="None">
+    <Grid  Background="#FF333131">
+        <ui:TitleBar Title="История игр"/>
+        <ui:ListView x:Name="HistoryListView" Margin="23,53,25,43">
+            <ui:ListView.View>
+                <ui:GridView>
+                    <ui:GridViewColumn Header="Дата" Width="200" DisplayMemberBinding="{Binding HistoryDate}"/>
+                    <ui:GridViewColumn Header="Тип" Width="200" DisplayMemberBinding="{Binding Type}" />
+                    <ui:GridViewColumn Header="Итог" Width="200" DisplayMemberBinding="{Binding Amount}"/>
+                </ui:GridView>
+            </ui:ListView.View>
+        </ui:ListView>
+    </Grid>
+</Window>

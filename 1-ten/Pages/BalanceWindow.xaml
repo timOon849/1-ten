@@ -1,0 +1,57 @@
+﻿<Window x:Class="_1_ten.Pages.BalanceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_1_ten.Pages"
+        mc:Ignorable="d"
+        Title="BalanceWindow" Height="650" Width="800" WindowStyle="None">
+    <Grid Background="#FF333131">
+        <ui:TitleBar Title="1Ten the best casino" Height="25"/>
+        <TabControl Margin="0,25,0,-25">
+            <TabItem Header="Пополнение баланса" Margin="0,0,31,0">
+                <StackPanel Margin="10">
+                    <Label Content="Выберите способ пополнения:"/>
+                    <ComboBox x:Name="comboBoxDepositMethod" Margin="0,5,0,10">
+                        <ComboBoxItem Content="Банковская карта"/>
+                        <ComboBoxItem Content="Электронный кошелёк"/>
+                        <ComboBoxItem Content="Другие методы"/>
+                    </ComboBox>
+
+                    <Label Content="Сумма пополнения:" Width="141"/>
+                    <TextBox x:Name="textBoxDepositAmount" Width="200" Text="Введите сумму"/>
+                    <Button Content="Пополнить баланс" Click="ButtonDeposit_Click" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Вывод средств" Margin="-28,0,93,0">
+                <StackPanel Margin="10">
+
+                    <Label Content="Выберите способ вывода:"/>
+                    <ComboBox x:Name="comboBoxWithdrawMethod" Margin="0,5,0,10">
+                        <ComboBoxItem Content="Банковская карта"/>
+                        <ComboBoxItem Content="Электронный кошелёк"/>
+                        <ComboBoxItem Content="Криптовалюта"/>
+                    </ComboBox>
+                    <Label Content="Сумма вывода:" Width="104"/>
+                    <TextBox x:Name="textBoxWithdrawAmount" Width="200" Text="Введите сумму"/>
+
+                    <Button Content="Вывести средства" Click="ButtonWithdraw_Click" Margin="0,10,0,0" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <TextBlock Text="Статус транзакций:" FontWeight="Bold" Margin="10,238,625,378" Foreground="#FFF3F3F3" FontSize="16"/>
+        <ui:ListView x:Name="TransactionListView" Margin="0,277,0,0">
+            <ui:ListView.View>
+                <ui:GridView>
+                    <ui:GridViewColumn Header="Дата" Width="200" DisplayMemberBinding="{Binding Transaction_Date}"/>
+                    <ui:GridViewColumn Header="Тип" Width="200" DisplayMemberBinding="{Binding Transaction_Type}" />                    
+                    <ui:GridViewColumn Header="Сумма" Width="200" DisplayMemberBinding="{Binding Amount}" />
+                    <ui:GridViewColumn Header="Способ" Width="200" DisplayMemberBinding="{Binding Sposob}" />
+                </ui:GridView>
+            </ui:ListView.View>
+        </ui:ListView>
+    </Grid>
+</Window>
